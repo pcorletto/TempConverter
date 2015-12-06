@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/convert_prompt"
-        android:id="@+id/convertButton"
+        android:id="@+id/returnToMainButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/convert_prompt"
-        android:id="@+id/convertTextView"
+        android:id="@+id/resultsTextView"
         android:layout_alignTop="@+id/thermometerImageView"
         android:layout_centerHorizontal="true"
         android:textSize="32sp"/>
@@ -43,9 +43,9 @@
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/inputEditText"
-        android:layout_below="@+id/convertTextView"
-        android:layout_alignLeft="@+id/convertTextView"
-        android:layout_alignStart="@+id/convertTextView"
+        android:layout_below="@+id/resultsTextView"
+        android:layout_alignLeft="@+id/resultsTextView"
+        android:layout_alignStart="@+id/resultsTextView"
         android:hint="@string/enter_degrees_prompt"/>
 
     <RadioGroup
@@ -54,7 +54,7 @@
         android:layout_below="@+id/inputEditText"
         android:layout_alignLeft="@+id/inputEditText"
         android:layout_alignStart="@+id/inputEditText"
-        android:layout_above="@+id/convertButton">
+        android:layout_above="@+id/returnToMainButton">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:text="@string/reset_button_prompt"
         android:id="@+id/resetButton"
-        android:layout_above="@+id/convertButton"
+        android:layout_above="@+id/returnToMainButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         style="@style/reset_button_style"/>
