@@ -14,7 +14,7 @@ public class ConvertActivity extends ActionBarActivity {
     private TextView mInputTemp, mInputChoice, mConvTemp, mConvChoice;
     private Button mReturnToMainButton;
     private String inputChoice, convChoice;
-    private int inputTemp, convTemp;
+    private float inputTemp, convTemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +27,19 @@ public class ConvertActivity extends ActionBarActivity {
         mReturnToMainButton = (Button) findViewById(R.id.returnToMainButton);
 
         Intent intent = getIntent();
-        inputTemp = intent.getIntExtra(getString(R.string.input_temp), 0);
+        inputTemp = intent.getFloatExtra(getString(R.string.input_temp), 0);
         inputChoice = intent.getStringExtra(getString(R.string.input_choice));
-        convTemp = intent.getIntExtra(getString(R.string.conv_temp), 0);
+        convTemp = intent.getFloatExtra(getString(R.string.conv_temp), 0);
         convChoice = intent.getStringExtra(getString(R.string.conv_choice));
 
-        mInputTemp.setText(inputTemp+"");
+        //Display the decimal numbers for the temperatures using one decimal digit after the decimal point
+
+        String formattedInputTemp = String.format("%.1f", inputTemp);
+        String formattedConvTemp = String.format("%.1f", convTemp);
+
+        mInputTemp.setText(formattedInputTemp);
         mInputChoice.setText(inputChoice);
-        mConvTemp.setText(convTemp+"");
+        mConvTemp.setText(formattedConvTemp);
         mConvChoice.setText(convChoice);
 
         mReturnToMainButton.setOnClickListener(new View.OnClickListener() {

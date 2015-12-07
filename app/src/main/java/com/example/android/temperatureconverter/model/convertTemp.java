@@ -5,15 +5,15 @@ package com.example.android.temperatureconverter.model;
  */
 public class convertTemp {
 
-    private int mCelsius;
-    private int mFahrenheit;
+    private float mCelsius;
+    private float mFahrenheit;
 
-    public int convertToCelsius(int fahrenheit){
+    public float convertToCelsius(float fahrenheit){
         mCelsius = ((fahrenheit-32)*5)/9;
         return mCelsius;
     }
 
-    public int convertToFahrenheit(int celsius){
+    public float convertToFahrenheit(float celsius){
         mFahrenheit  = ((celsius*9)/5)+32;
         return mFahrenheit;
     }

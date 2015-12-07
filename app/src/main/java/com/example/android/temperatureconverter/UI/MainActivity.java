@@ -17,11 +17,11 @@ public class MainActivity extends ActionBarActivity {
 
     private EditText mInputTempEditText;
     private String mInputString;
-    private int mInputTemp;
+    private float mInputTemp;
     private String mInputChoice = "F";
     private String mConvChoice = "C";
     private Button mConvertButton, mResetButton;
-    private int mConvertedTemp;
+    private float mConvertedTemp;
     private RadioButton mFRadioButton;
     private convertTemp convertDegrees = new convertTemp();
 
@@ -69,7 +69,7 @@ public class MainActivity extends ActionBarActivity {
                     return;
                 }
 
-                mInputTemp = Integer.parseInt(mInputString);
+                mInputTemp = Float.parseFloat(mInputString);
 
                 if(mInputChoice=="F"){
                     mConvertedTemp = convertDegrees.convertToCelsius(mInputTemp);
